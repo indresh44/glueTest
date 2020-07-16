@@ -8,12 +8,7 @@ phases:
       - echo Just Checking
   build:
     commands:
-      - echo Building static site...
-      - yarn build
-      - echo Run tests...
-      - CI=true yarn test
-
+      - echo moving artifacts to s3...
 artifacts:
-  type: zip
   paths:
     - '.**/*'
