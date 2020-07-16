@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.6
+    commands:
+      - echo Just Checking
+  build:
+    commands:
+      - echo Building static site...
+      - yarn build
+      - echo Run tests...
+      - CI=true yarn test
+
+artifacts:
+  type: zip
+  paths:
+    - '.**/*'
