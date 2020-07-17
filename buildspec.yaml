@@ -5,7 +5,7 @@ phases:
     runtime-versions:
       python: 3.7
     commands:
-      - echo Just Checking 3
+      - echo Just Checking 4
   build:
     commands:
       - echo moving artifacts to s3...
