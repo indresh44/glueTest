@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Resources:
+  HelloWorldJob:
+    Type: AWS::Glue::Job
+    Properties:
+      Command:
+        Name: glueetl
+        ScriptLocation: "s3://ik-city-data/glueBuild/glueJobs/csv_to_parquet.py"
+      Description: "just checking the glue cft"
+      GlueVersion: "1.0"
+      NumberOfWorkers: 3
+      MaxRetries: 1
+      Name: "GlueCsvToParq"
+      Role: "glue_service_role"
+      WorkerType: "Standard"
