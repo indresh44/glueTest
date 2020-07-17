@@ -12,7 +12,7 @@ def runJob(jobname):
 	jobRunid = response['JobRunId']
 	response = glue.get_job_run(JobName=jobname,RunId=jobRunid)
 	state = response['JobRun']['JobRunState']
-	print()"state " + state)
+	print("state " + state)
 	while state == 'RUNNING':
 		time.sleep(180)
 		response = glue.get_job_run(JobName=jobname,RunId=jobRunid)
